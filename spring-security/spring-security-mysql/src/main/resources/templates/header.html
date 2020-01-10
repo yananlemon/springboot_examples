@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>用户列表</title>
+
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入-->
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<header th:fragment="head">
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="/index" class="navbar-brand">Spring Security</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<!--向左对齐-->
+				<ul class="nav navbar-nav navbar-left"
+					th:each="permission:${session.permissions}"
+					th:object="${permission}"
+					th:if="${permission.parentPermissionCode=='root'}">
+					<li class="dropdown" th:if="${permission.parentPermissionCode=='root'}">
+						<a href="#" class="dropdown-toggle"
+						   data-toggle="dropdown">
+							<span th:text="${permission.permissionText}"></span>
+							<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li
+									th:each="cPermission:${session.permissions}"
+									th:object="${cPermission}"
+									th:if="${cPermission.parentPermissionCode==permission.permissionCode}">
+								<a th:if="${cPermission.parentPermissionCode==permission.permissionCode}" th:href="${cPermission.permissionUrl}" th:text="${cPermission.permissionText}"></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<!--向右对齐-->
+				<form th:action="@{/logout}" method="post" class="navbar-form navbar-right">
+					<button type="submit" class="btn btn-default">
+						退出
+					</button>
+				</form>
+				<p class="navbar-text navbar-right" >
+					<a href="#" class="navbar-link" th:text="${session.username}"></a>
+				</p>
+			</div>
+		</div>
+	</nav>
+</header>
+</body>
+</html>
