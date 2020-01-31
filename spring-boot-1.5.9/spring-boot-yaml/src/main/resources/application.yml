@@ -1,0 +1,9 @@
+#person:
+#  name: 唐伯虎
+#  age: 19
+#  sex: false
+#  birthday: 2001/1/19
+#  maps: {key1: value1,key2: value2}
+#  pets:
+#    - {name: 旺财,age: 9,favoriteFoods: ['肉']}
+#    - {name: kitty,age: 2,favoriteFoods: [鱼,老鼠]}

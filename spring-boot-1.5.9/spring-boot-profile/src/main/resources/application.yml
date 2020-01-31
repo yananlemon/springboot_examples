@@ -1,0 +1,19 @@
+# 通过active可以激活某个配置
+spring:
+  profiles:
+    active: dev
+server:
+  port: 8080
+---
+# 通过spring: profiles: dev 指定此文档块是开发环境配置
+spring:
+  profiles: dev
+server:
+  port: 8081
+
+---
+# 通过spring: profiles: prod 指定此文档块是生产环境配置
+spring:
+  profiles: prod
+server:
+  port: 8082
