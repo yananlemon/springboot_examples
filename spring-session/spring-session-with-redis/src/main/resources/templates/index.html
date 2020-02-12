@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
-	<title>基于Redis实现的Spring Session示例</title>
+    <meta charset="UTF-8">
+    <title>基于Redis实现的Spring Session示例</title>
 </head>
 <body>
 <div>
-	<form th:action="@{/message}" method="post">
-		<textarea name="msg" cols="40" rows="2"></textarea>
-		<br> <input type="submit" value="保存消息" />
-	</form>
+    <form th:action="@{/message}" method="post">
+        <textarea name="msg" cols="40" rows="2"></textarea>
+        <br> <input type="submit" value="保存消息"/>
+    </form>
 </div>
 <div>
-	<h2>消息</h2>
-	<ul th:each="m : ${messages}">
-		<li th:text="${m}">msg</li>
-	</ul>
+    <h2>消息</h2>
+    <ul th:each="m : ${messages}">
+        <li th:text="${m}">msg</li>
+    </ul>
 </div>
 <div>
-	<form th:action="@{/messages}" method="post">
-		<input type="submit" value="销毁会话" />
-	</form>
+    <form th:action="@{/messages}" method="post">
+        <input type="submit" value="销毁会话"/>
+    </form>
 </div>
 </body>
 </html>

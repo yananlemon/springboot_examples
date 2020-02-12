@@ -10,29 +10,29 @@ import org.springframework.context.annotation.Configuration;
 public class ServletComponentConfig {
 
     @Bean
-    public ServletRegistrationBean myServlet(){
+    public ServletRegistrationBean myServlet() {
         MyServlet servlet = new MyServlet();
         ServletRegistrationBean servletRegistrationBean = new
-                ServletRegistrationBean(servlet,"/myServlet");
+                ServletRegistrationBean(servlet, "/myServlet");
         servletRegistrationBean.setLoadOnStartup(1);
         return servletRegistrationBean;
     }
 
     @Bean
-    public FilterRegistrationBean myFilter(){
+    public FilterRegistrationBean myFilter() {
         MyFilter filter = new MyFilter();
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
         filterRegistrationBean.setFilter(filter);
         filterRegistrationBean.addUrlPatterns("/*");
-        filterRegistrationBean.addInitParameter("initParam","value");
+        filterRegistrationBean.addInitParameter("initParam", "value");
         return filterRegistrationBean;
     }
 
     @Bean
-    public ServletListenerRegistrationBean myListener(){
+    public ServletListenerRegistrationBean myListener() {
         ServletListenerRegistrationBean servletListenerRegistrationBean = new
                 ServletListenerRegistrationBean();
         servletListenerRegistrationBean.setListener(new MyListener());
-        return  servletListenerRegistrationBean;
+        return servletListenerRegistrationBean;
     }
 }

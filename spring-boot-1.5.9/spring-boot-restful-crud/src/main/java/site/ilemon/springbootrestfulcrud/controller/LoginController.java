@@ -14,12 +14,12 @@ public class LoginController {
 
     @PostMapping("/user/login")
     public String login(@RequestParam("username") String username,
-                        @RequestParam("password") String password, Map<String,Object> map, HttpSession session){
-        if( !StringUtils.isEmpty(username) && "123456".equals(password)){
-            session.setAttribute("loginUser",username);
+                        @RequestParam("password") String password, Map<String, Object> map, HttpSession session) {
+        if (!StringUtils.isEmpty(username) && "123456".equals(password)) {
+            session.setAttribute("loginUser", username);
             return "redirect:/main.html";
         }
-        map.put("msg","用户名或者密码错误！");
+        map.put("msg", "用户名或者密码错误！");
         return "login";
 
     }

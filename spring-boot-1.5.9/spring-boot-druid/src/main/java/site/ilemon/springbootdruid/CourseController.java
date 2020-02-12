@@ -16,7 +16,7 @@ public class CourseController {
     private CourseDao courseDao;
 
     @GetMapping()
-    public List<Map<String,Object>> listCourse(){
+    public List<Map<String, Object>> listCourse() {
         return courseDao.listCourse();
     }
 }

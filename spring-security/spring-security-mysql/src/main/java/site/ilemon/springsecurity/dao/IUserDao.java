@@ -8,9 +8,10 @@ import site.ilemon.springsecurity.entity.User;
  * 用户数据访问接口
  */
 @Repository
-public interface IUserDao extends JpaRepository<User,Integer> {
+public interface IUserDao extends JpaRepository<User, Integer> {
     /**
      * 根据{@code username}查询用户
+     *
      * @param username
      * @return
      */

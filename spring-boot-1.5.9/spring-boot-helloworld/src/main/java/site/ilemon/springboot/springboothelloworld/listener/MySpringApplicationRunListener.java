@@ -7,7 +7,7 @@ import org.springframework.core.env.ConfigurableEnvironment;
 
 public class MySpringApplicationRunListener implements SpringApplicationRunListener {
 
-    public MySpringApplicationRunListener(SpringApplication app, String[] str){
+    public MySpringApplicationRunListener(SpringApplication app, String[] str) {
 
     }
 
@@ -19,7 +19,7 @@ public class MySpringApplicationRunListener implements SpringApplicationRunListe
     @Override
     public void environmentPrepared(ConfigurableEnvironment environment) {
         String osName = environment.getProperty("os.name");
-        System.out.println("environmentPrepared...osName:"+osName);
+        System.out.println("environmentPrepared...osName:" + osName);
     }
 
     @Override

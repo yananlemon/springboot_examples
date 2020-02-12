@@ -16,7 +16,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
-    public AppUserDetailsServiceImpl appUserDetailsService(){
+    public AppUserDetailsServiceImpl appUserDetailsService() {
         return new AppUserDetailsServiceImpl();
     }
 
@@ -28,6 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * 认证
+     *
      * @param auth
      * @throws Exception
      */
@@ -38,6 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * 授权
+     *
      * @param http
      * @throws Exception
      */
@@ -48,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
 
         // 这些URI不需要进行身份认证
-        http.authorizeRequests().antMatchers("/","/login", "/logout","/user/registration","/user/user").permitAll();
+        http.authorizeRequests().antMatchers("/", "/login", "/logout", "/user/registration", "/user/user").permitAll();
 
         // 访问下面的URL，需要登录
         http.authorizeRequests().antMatchers("/welcome").authenticated();

@@ -10,7 +10,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "t_permissions")
-public class Permission implements java.io.Serializable{
+public class Permission implements java.io.Serializable {
 
     /**
      *
@@ -29,7 +29,6 @@ public class Permission implements java.io.Serializable{
     private String permissionText;
     @Column(name = "permission_url")
     private String permissionUrl;
-
 
 
     public Permission() {

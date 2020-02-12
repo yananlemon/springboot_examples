@@ -9,8 +9,8 @@
     <title>Signin Template · Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet"  th:href="@{/webjars/bootstrap/4.4.1/css/bootstrap.css}">
-    <link rel="stylesheet"  th:href="@{/asserts/css/signin.css}">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.4.1/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/asserts/css/signin.css}">
 
     <style>
         .bd-placeholder-img {
@@ -31,13 +31,16 @@
 </head>
 <body class="text-center">
 <form class="form-signin" th:action="@{/user/login}" method="post">
-    <img class="mb-4" th:src="@{/asserts/img/bootstrap-solid.svg}" src="asserts/img/bootstrap-solid.svg" width="72" height="72">
+    <img class="mb-4" th:src="@{/asserts/img/bootstrap-solid.svg}" src="asserts/img/bootstrap-solid.svg" width="72"
+         height="72">
     <h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip}">Please sign in</h1>
     <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
     <label for="usernameInput" class="sr-only" th:text="#{login.username}">Username</label>
-    <input type="text" id="usernameInput" name ="username" class="form-control" th:placeholder="#{login.username}" placeholder="Username" required autofocus>
+    <input type="text" id="usernameInput" name="username" class="form-control" th:placeholder="#{login.username}"
+           placeholder="Username" required autofocus>
     <label for="inputPassword" class="sr-only" th:text="#{login.password}">Password</label>
-    <input type="password" id="inputPassword" name="password" class="form-control" th:placeholder="#{login.password}" placeholder="Password" required>
+    <input type="password" id="inputPassword" name="password" class="form-control" th:placeholder="#{login.password}"
+           placeholder="Password" required>
     <div class="checkbox mb-3">
         <label>
             <input type="checkbox" value="remember-me"/> [[#{login.rememberMe}]]

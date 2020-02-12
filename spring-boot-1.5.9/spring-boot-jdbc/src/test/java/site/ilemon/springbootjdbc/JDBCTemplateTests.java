@@ -22,11 +22,12 @@ public class JDBCTemplateTests {
 
     @Autowired
     private ApplicationContext ioc;
-    @Test
-    public void selectCourseTest(){
-        List<Map<String,Object>> courses = jdbcTemplate.queryForList("select * from course");
 
-        for (Map<String,Object> row : courses) {
+    @Test
+    public void selectCourseTest() {
+        List<Map<String, Object>> courses = jdbcTemplate.queryForList("select * from course");
+
+        for (Map<String, Object> row : courses) {
             System.out.printf("%d,%s\n", row.get("id"), row.get("name").toString());
         }
     }

@@ -16,10 +16,10 @@ public class AppLocaleResolver implements LocaleResolver {
     public Locale resolveLocale(HttpServletRequest httpServletRequest) {
         String language = httpServletRequest.getParameter("language");
         // 默认的国际化为中文
-        Locale locale = new Locale("zh","CN");
-        if( !StringUtils.isEmpty(language)) {
+        Locale locale = new Locale("zh", "CN");
+        if (!StringUtils.isEmpty(language)) {
             String[] split = language.split("_");
-            locale = new Locale(split[0],split[1]);
+            locale = new Locale(split[0], split[1]);
         }
         return locale;
     }

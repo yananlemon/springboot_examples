@@ -16,7 +16,7 @@ public class TestProSource {
     private Integer age;
     private Boolean sex;
     private Date birthday;
-    private Map<String,Object> maps;
+    private Map<String, Object> maps;
     private List<Pet> pets;
 
     public TestProSource() {

@@ -11,6 +11,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     /**
      * 方法执行前进行处理
+     *
      * @param request
      * @param response
      * @param o
@@ -22,11 +23,11 @@ public class LoginInterceptor implements HandlerInterceptor {
 
         // 从session中获取用户
         String username = (String) request.getSession().getAttribute("loginUser");
-        if(StringUtils.isEmpty(username)){
+        if (StringUtils.isEmpty(username)) {
 
             // 设置错误信息并转发到登陆页面
-            request.setAttribute("msg","请先登陆！");
-            request.getRequestDispatcher("/login.html").forward(request,response);
+            request.setAttribute("msg", "请先登陆！");
+            request.getRequestDispatcher("/login.html").forward(request, response);
             return false;
         }
         return true;

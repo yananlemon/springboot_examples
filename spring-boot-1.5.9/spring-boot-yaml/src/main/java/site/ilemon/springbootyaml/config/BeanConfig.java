@@ -14,7 +14,7 @@ import site.ilemon.springbootyaml.service.impl.UserServiceImpl;
 public class BeanConfig {
 
     @Bean
-    public UserServiceImpl userService(){
+    public UserServiceImpl userService() {
         return new UserServiceImpl();
     }
 }

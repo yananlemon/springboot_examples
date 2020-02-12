@@ -8,13 +8,13 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-@ConfigurationProperties(prefix="person")
+@ConfigurationProperties(prefix = "person")
 public class Person {
     private String name;
     private Integer age;
     private Boolean sex;
     private Date birthday;
-    private Map<String,Object> maps;
+    private Map<String, Object> maps;
     private List<Pet> pets;
 
     public Person() {

@@ -50,8 +50,7 @@
             border-color: #eed3d7;
         }
 
-        .alert-danger, .alert-error, .alert-danger .alert-heading, .alert-error .alert-heading
-        {
+        .alert-danger, .alert-error, .alert-danger .alert-heading, .alert-error .alert-heading {
             color: #b94a48;
         }
 
@@ -69,11 +68,11 @@
             padding-bottom: 14px;
         }
 
-        .alert-block>p, .alert-block>ul {
+        .alert-block > p, .alert-block > ul {
             margin-bottom: 0;
         }
 
-        .alert-block p+p {
+        .alert-block p + p {
             margin-top: 5px;
         }
     </style>
@@ -82,25 +81,28 @@
 <div th:include="static_resources_header :: head"></div>
 <div class="container">
     <form id="loginForm" class="form-signin"
-          th:action = "@{/user/user}"
+          th:action="@{/user/user}"
           method="post">
         <h2 class="form-signin-heading">注册用户</h2>
         <div class="input-group input-group-lg">
             <label for="username" class="sr-only">用户名</label> <span
                 class="input-group-addon"><i
                 class="glyphicon glyphicon-user red"></i></span> <input type="text"
-                                                                        id="username" name="username" class="form-control"
+                                                                        id="username" name="username"
+                                                                        class="form-control"
                                                                         placeholder="请输入用户名" required autofocus>
         </div>
         <div class="input-group input-group-lg">
             <label for="password" class="sr-only">密码</label> <span
                 class="input-group-addon"><i
                 class="glyphicon glyphicon-lock red"></i></span> <input id="password"
-                                                                        name="password" type="password" class="form-control"
+                                                                        name="password" type="password"
+                                                                        class="form-control"
                                                                         placeholder="请输入密码" required>
         </div>
         <button id="loginBtn" class="btn btn-lg btn-primary btn-block"
-                type="submit">注册</button>
+                type="submit">注册
+        </button>
     </form>
 </div>
 <!-- /container -->

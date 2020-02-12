@@ -14,7 +14,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginInterceptor())
                 .addPathPatterns("/**")                             //拦截所有请求
-                .excludePathPatterns("/login.html","/","/user/login");  // 排除掉登陆请求
+                .excludePathPatterns("/login.html", "/", "/user/login");  // 排除掉登陆请求
         super.addInterceptors(registry);
     }
 
@@ -29,10 +29,11 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 
     /**
      * 注册国际化bean
+     *
      * @return
      */
     @Bean
-    public LocaleResolver localeResolver(){
+    public LocaleResolver localeResolver() {
         return new AppLocaleResolver();
     }
 }

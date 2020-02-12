@@ -6,7 +6,9 @@ public class Contact {
     private String type;
     private int number;
 
-    public Contact(){}
+    public Contact() {
+    }
+
     public String getType() {
         return type;
     }

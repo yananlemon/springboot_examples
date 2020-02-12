@@ -11,7 +11,7 @@ public class PersonController {
     private Person person;
 
     @GetMapping("/person")
-    public Person attainPerson(){
+    public Person attainPerson() {
         return person;
     }
 }

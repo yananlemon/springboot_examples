@@ -18,28 +18,30 @@ public class DruidDataSourceConfig {
 
     /**
      * 向容器注册DruidDataSource类型的bean
+     *
      * @return
      */
     @ConfigurationProperties(prefix = "spring.datasource")
     @Bean
-    public DataSource dataSource(){
-        return  new DruidDataSource();
+    public DataSource dataSource() {
+        return new DruidDataSource();
     }
 
     /**
      * 配置Druid 监控Servlet
+     *
      * @return
      */
     @Bean
-    public ServletRegistrationBean statViewServlet(){
+    public ServletRegistrationBean statViewServlet() {
 
         // 设置Druid初始化参数
         Map<String, String> initParameters = new HashMap<>();
-        initParameters.put("loginUsername","admin");
-        initParameters.put("loginPassword","admin");
-        initParameters.put("allow","");
+        initParameters.put("loginUsername", "admin");
+        initParameters.put("loginPassword", "admin");
+        initParameters.put("allow", "");
 
-        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(),"");
+        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(), "");
         servletRegistrationBean.addUrlMappings("/druid/*"); // 处理所有以druid开头的请求
         servletRegistrationBean.setInitParameters(initParameters);
         ServletRegistrationBean registration = new ServletRegistrationBean();
@@ -47,7 +49,7 @@ public class DruidDataSourceConfig {
     }
 
     @Bean
-    public FilterRegistrationBean webStatFilter(){
+    public FilterRegistrationBean webStatFilter() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
         filterRegistrationBean.setFilter(new WebStatFilter());
         filterRegistrationBean.addUrlPatterns("/*");

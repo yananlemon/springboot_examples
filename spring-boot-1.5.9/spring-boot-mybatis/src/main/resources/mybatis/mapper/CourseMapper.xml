@@ -16,7 +16,8 @@
         select * from course where id = #{id}
     </select>
 
-    <insert id="insert"  useGeneratedKeys="true" keyProperty="id" parameterType="site.ilemon.springbootmybatis.entity.Course">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id"
+            parameterType="site.ilemon.springbootmybatis.entity.Course">
         insert into course (name) values (#{name})
     </insert>
 

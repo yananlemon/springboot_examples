@@ -21,8 +21,9 @@ public class SpringBootJdbcApplicationTests {
 
     @Autowired
     private ApplicationContext ioc;
+
     @Test
-    public void printBeans(){
+    public void printBeans() {
         String[] beanNames = ioc.getBeanDefinitionNames();
         //String[] beanNames = ctx.getBeanNamesForAnnotation(RestController.class);//所有添加该注解的bean
         //logger.info("bean总数:{}", ctx.getBeanDefinitionCount());

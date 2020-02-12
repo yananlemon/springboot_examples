@@ -16,6 +16,7 @@ public interface IPermissionDao extends JpaRepository<Permission, Integer> {
 
     /**
      * 根据用户查询权限
+     *
      * @param userId
      * @return
      */
@@ -31,6 +32,7 @@ public interface IPermissionDao extends JpaRepository<Permission, Integer> {
 
     /**
      * 根据用户查询权限
+     *
      * @param username
      * @return
      */
@@ -42,5 +44,5 @@ public interface IPermissionDao extends JpaRepository<Permission, Integer> {
                     "SELECT * FROM t_role AS r WHERE EXISTS \n" +
                     "(SELECT user_id FROM t_user_role WHERE  user_id = (select id from t_user where username = :username) AND role_id = r.id)\n" +
                     "))")
-    List<Permission> findPermissionByUsername(String  username);
+    List<Permission> findPermissionByUsername(String username);
 }

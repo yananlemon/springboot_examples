@@ -30,14 +30,15 @@ public class SpringBootYamlApplicationTests {
 
     @Autowired
     ApplicationContext ioc;
+
     @Test
-    public void testBean(){
+    public void testBean() {
         IUserService service = (IUserService) ioc.getBean("userService");
         Assert.notNull(service);
     }
 
     @Test
-    public void testBean2(){
+    public void testBean2() {
         Assert.notNull(userService);
     }
 
@@ -63,8 +64,9 @@ public class SpringBootYamlApplicationTests {
 
     @Autowired
     private Placeholder placeholder;
+
     @Test
-    public void testPlaceholder(){
+    public void testPlaceholder() {
         System.out.println(placeholder);
     }
 

@@ -16,22 +16,22 @@ public class Role {
 
     private String flag;
 
-    @Column(name="create_time")
+    @Column(name = "create_time")
     private String createTime;
 
 
-    @Column(name="create_by")
+    @Column(name = "create_by")
     private String createBy;
 
 
-    @Column(name="update_time")
+    @Column(name = "update_time")
     private String updateTime;
 
 
-    @Column(name="update_by")
+    @Column(name = "update_by")
     private String updateBy;
 
-    public Role(){
+    public Role() {
 
     }
 

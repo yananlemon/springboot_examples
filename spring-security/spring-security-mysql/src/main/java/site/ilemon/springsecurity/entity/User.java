@@ -17,11 +17,11 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name="username")
+    @Column(name = "username")
     private String username;
 
 
-    @Column(name="password")
+    @Column(name = "password")
     private String password;
 
     public User() {
@@ -37,18 +37,14 @@ public class User implements UserDetails {
     }
 
 
-
     public void setUsername(String username) {
         this.username = username;
     }
 
 
-
     public void setPassword(String password) {
         this.password = password;
     }
-
-
 
 
     @Override
@@ -86,4 +82,4 @@ public class User implements UserDetails {
         return false;
     }
 
-   }
+}

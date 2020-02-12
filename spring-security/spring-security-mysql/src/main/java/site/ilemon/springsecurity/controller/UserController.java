@@ -18,6 +18,7 @@ public class UserController {
 
     /**
      * 跳转到注册页面
+     *
      * @param model
      * @return
      */
@@ -28,6 +29,7 @@ public class UserController {
 
     /**
      * 注册用户
+     *
      * @param user
      * @return
      */

@@ -29,12 +29,12 @@ public class AppUserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userDao.findByUsername(username);
-        if( user == null )
+        if (user == null)
             throw new UsernameNotFoundException(username);
         List<GrantedAuthority> grantedAuthorities = new ArrayList<GrantedAuthority>();
         List<Permission> permissions = permissionDao.findPermissionByUserId(user.getId());
         for (Permission permission : permissions) {
-            if (permission != null && permission.getPermissionCode()!=null) {
+            if (permission != null && permission.getPermissionCode() != null) {
                 GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(permission.getPermissionCode());
                 grantedAuthorities.add(grantedAuthority);
             }

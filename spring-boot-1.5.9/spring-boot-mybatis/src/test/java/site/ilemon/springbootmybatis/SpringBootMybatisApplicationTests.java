@@ -20,7 +20,7 @@ public class SpringBootMybatisApplicationTests {
     @Test
     public void testList() {
         List<Course> courses = mapper.list();
-        for(Course course :courses)
+        for (Course course : courses)
             System.out.println(course);
     }
 
@@ -39,7 +39,7 @@ public class SpringBootMybatisApplicationTests {
 
     @Test
     public void testUpdate() {
-        Course course = new Course(5,"Java Programming1111");
+        Course course = new Course(5, "Java Programming1111");
         int effectedRow = mapper.update(course);
         System.out.println(effectedRow);
     }

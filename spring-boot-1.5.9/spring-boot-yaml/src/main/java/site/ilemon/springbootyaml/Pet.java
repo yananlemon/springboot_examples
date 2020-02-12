@@ -6,9 +6,11 @@ public class Pet {
     private String name;
     private Integer age;
     private List<String> favoriteFoods;
-    public Pet(){
+
+    public Pet() {
 
     }
+
     public Pet(String name, Integer age, List<String> favoriteFoods) {
         this.name = name;
         this.age = age;

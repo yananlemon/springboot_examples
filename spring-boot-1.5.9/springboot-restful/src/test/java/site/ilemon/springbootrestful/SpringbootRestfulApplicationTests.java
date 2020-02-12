@@ -13,8 +13,8 @@ public class SpringbootRestfulApplicationTests {
     }
 
     @Test
-    public void testYaml(){
-        Customer c = new Customer("Andy", "Yan",19);
+    public void testYaml() {
+        Customer c = new Customer("Andy", "Yan", 19);
 
         Yaml yaml = new Yaml();
         System.out.println(yaml.dump(c));

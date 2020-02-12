@@ -17,9 +17,9 @@ import java.nio.charset.Charset;
 public class YamlMessageConverter extends AbstractHttpMessageConverter<Customer> {
 
 
-    public YamlMessageConverter(){
+    public YamlMessageConverter() {
         // 支持application/yaml
-        super(new MediaType("application","yaml" , Charset.forName("UTF-8")));
+        super(new MediaType("application", "yaml", Charset.forName("UTF-8")));
     }
 
     @Override
@@ -29,6 +29,7 @@ public class YamlMessageConverter extends AbstractHttpMessageConverter<Customer>
 
     /**
      * 将请求的参数转换为yaml格式的数据
+     *
      * @param aClass
      * @param httpInputMessage
      * @return
@@ -44,6 +45,7 @@ public class YamlMessageConverter extends AbstractHttpMessageConverter<Customer>
 
     /**
      * 将响应的数据转换为yaml格式
+     *
      * @param o
      * @param httpOutputMessage
      * @throws IOException

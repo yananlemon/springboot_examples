@@ -8,10 +8,9 @@ import org.springframework.stereotype.Component;
 public class TestPropertiesBind2 {
 
     /**
-     * @Value注解类似配置文件中配置bean属性的方式
-     * <bean id="aBean">
-     *  <property name="firstName" value="bill"></property>
-     *  <property name="lastName" value="${属性文件中的key}"></property>
+     * @Value注解类似配置文件中配置bean属性的方式 <bean id="aBean">
+     * <property name="firstName" value="bill"></property>
+     * <property name="lastName" value="${属性文件中的key}"></property>
      * </bean>
      */
     @Value("bill")

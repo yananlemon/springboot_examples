@@ -25,17 +25,17 @@ public class HomeController {
     private IPermissionDao permissionDao;
 
     @GetMapping("/")
-    public String redirectLogin2(){
+    public String redirectLogin2() {
         return "login";
     }
 
     @GetMapping("/login")
-    public String redirectLogin(){
+    public String redirectLogin() {
         return "login";
     }
 
     @PostMapping("/logout")
-    public String logout(HttpSession session){
+    public String logout(HttpSession session) {
         session.removeAttribute("currUser");
         session.removeAttribute("username");
         session.removeAttribute("permissions");
@@ -45,16 +45,17 @@ public class HomeController {
     /**
      * 跳转到欢迎页面
      * 需要加载权限菜单
+     *
      * @param request
      * @return
      */
     @GetMapping("/welcome")
-    public String index(HttpServletRequest request){
+    public String index(HttpServletRequest request) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         Principal principal = request.getUserPrincipal();
-        String username =  principal.getName();
-        logger.debug(String.format("redirect to welcome page for user:%s",username));
-        if( username != null && !username.trim().equals("")){
+        String username = principal.getName();
+        logger.debug(String.format("redirect to welcome page for user:%s", username));
+        if (username != null && !username.trim().equals("")) {
             List<Permission> permissions = permissionDao.findPermissionByUsername(username);
             request.getSession().setAttribute("permissions", permissions);
             request.getSession().setAttribute("username", username);

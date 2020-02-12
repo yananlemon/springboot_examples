@@ -10,9 +10,9 @@ import java.util.Map;
 public class HelloController {
 
     @GetMapping("/test")
-    public String test(Map<String,Object> map){
-        map.put("hello","<h4>hello</h4>");
-        map.put("technologies", Arrays.asList("SpringBoot","Struts"));
+    public String test(Map<String, Object> map) {
+        map.put("hello", "<h4>hello</h4>");
+        map.put("technologies", Arrays.asList("SpringBoot", "Struts"));
         return "hello";
     }
 }

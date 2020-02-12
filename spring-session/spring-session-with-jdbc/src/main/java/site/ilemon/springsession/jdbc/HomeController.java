@@ -18,6 +18,7 @@ public class HomeController {
 
     /**
      * 跳转到首页
+     *
      * @param model
      * @param session
      * @return
@@ -37,6 +38,7 @@ public class HomeController {
 
     /**
      * 将{@code msg}保存到session中，key为：MY_MESSAGES,value为消息的二进制表示
+     *
      * @param msg
      * @param request
      * @return
@@ -57,6 +59,7 @@ public class HomeController {
 
     /**
      * 销毁消息
+     *
      * @param request
      * @return
      */
